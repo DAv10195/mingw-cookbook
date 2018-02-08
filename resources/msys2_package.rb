@@ -49,8 +49,8 @@ action_class do
   def msys2_init
     cache_dir = ::File.join(root, '.cache')
     f_cache_dir = win_friendly_path(cache_dir)
-    base_url = 'http://downloads.sourceforge.net/project/msys2/Base/x86_64/msys2-base-x86_64-20160205.tar.xz'
-    base_checksum = '7e97e2af042e1b6f62cf0298fe84839014ef3d4a3e7825cffc6931c66cc0fc20'
+    base_url = 'https://s3-us-west-2.amazonaws.com/sensu-omnibus-cache/msys2-base-x86_64-20170918.tar.xz'
+    base_checksum = 'd4e24a385391a547b8a44e67f423f811bc7b57817ad94d7f0c330e17479a4bb8'
 
     unless ::File.exist?(::File.join(root, 'msys2.exe'))
       seven_zip_archive "cache msys2 base to #{f_cache_dir}" do
