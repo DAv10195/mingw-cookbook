@@ -106,12 +106,15 @@ action_class do
 
     # Update pacman and msys base packages.
     if ::File.exist?(::File.join(root, 'usr/bin/update-core')) || !::File.exist?(::File.join(root, 'custom-upgrade.sh'))
-      msys2_exec('upgrade msys2 core', '/custom-upgrade.sh')
-      msys2_exec('upgrade msys2 core: part 2', 'pacman -Suu --noconfirm')
+      # msys2_exec('upgrade msys2 core', '/custom-upgrade.sh')
+      #msys2_exec('upgrade msys2 core: part 2', 'pacman -Suu --noconfirm')
       # Now we can actually upgrade everything ever.
-      msys2_exec('upgrade entire msys2 system: 1', 'pacman -Syuu --noconfirm')
+      #msys2_exec('upgrade entire msys2 system: 1', 'pacman -Syuu --noconfirm')
       # Might need to do it once more to pick up a few stragglers.
-      msys2_exec('upgrade entire msys2 system: 2', 'pacman -Syuu --noconfirm')
+      #msys2_exec('upgrade entire msys2 system: 2', 'pacman -Syuu --noconfirm')
+
+      msys2_exec('upgrade msys2 database and core packages', 'pacman -Syu --noconfirm')
+      msys2_exec('upgrade core pacakges, second pass', 'pacman -Su --noconfirm')
     end
   end
 
