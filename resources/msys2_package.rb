@@ -113,6 +113,7 @@ action_class do
       # Might need to do it once more to pick up a few stragglers.
       #msys2_exec('upgrade entire msys2 system: 2', 'pacman -Syuu --noconfirm')
 
+      msys2_exec('remove catgets and libcatgets', 'pacman -R catgets libcatgets --noconfirm')
       msys2_exec('upgrade msys2 database and core packages', 'pacman -Syu --noconfirm')
       msys2_exec('upgrade core pacakges, second pass', 'pacman -Su --noconfirm')
     end
