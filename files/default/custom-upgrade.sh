@@ -18,6 +18,8 @@ fi
 
 run_pacman -Qu ${CRITICAL_PACKAGES}
 
+pacman -R catgets libcatgets --noconfirm
+
 if ! run_pacman -S --noconfirm --needed ${CRITICAL_PACKAGES} ${OPTIONAL_PACKAGES}; then
   exit 1
 fi
