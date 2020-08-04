@@ -117,8 +117,8 @@ action_class do
 
       # start fix windows build for acc after key issues with msys2 cookbook
       msys2_exec('get keyring', 'curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz')
-      msys2_exec('get keyring signature', 'curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz.sig')
-      msys2_exec('verify keyring signature', 'pacman-key --verify msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz{.sig,}')
+      #msys2_exec('get keyring signature', 'curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz.sig')
+      #msys2_exec('verify keyring signature', 'pacman-key --verify msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz{.sig,}')
       msys2_exec('update pacman with keyring', 'pacman -U msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz')
       # end fix
 
