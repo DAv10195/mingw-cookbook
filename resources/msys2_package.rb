@@ -119,7 +119,7 @@ action_class do
       msys2_exec('get keyring', 'curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz')
       #msys2_exec('get keyring signature', 'curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz.sig')
       #msys2_exec('verify keyring signature', 'pacman-key --verify msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz{.sig,}')
-      msys2_exec('update pacman with keyring', 'pacman -U msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz')
+      msys2_exec('update pacman with keyring', 'pacman -U msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz --noconfirm')
       # end fix
 
       msys2_exec('upgrade msys2 database and core packages', 'pacman -Syu --noconfirm')
